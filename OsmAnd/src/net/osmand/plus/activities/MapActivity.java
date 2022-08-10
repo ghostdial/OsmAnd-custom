@@ -573,6 +573,13 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		setupProgressBar(pb, routingHelper.isPublicTransportMode() || !routingHelper.isOsmandRouting());
 	}
 
+	@Override
+	public void onUserLeaveHint() {
+		PictureInPictureParams pictureInPictureParams = new PictureInPictureParams.Builder().build();
+
+		enterPictureInPictureMode(pictureInPictureParams);
+	}
+
 	public void setupProgressBar(@NonNull ProgressBar pb, boolean indeterminate) {
 		DayNightHelper dayNightHelper = getMyApplication().getDaynightHelper();
 
